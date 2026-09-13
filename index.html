@@ -58,7 +58,29 @@ h1{font-size:clamp(2rem,9vw,3.25rem);line-height:1.01;color:var(--green-950);mar
 @media (min-width:560px){.start-card{padding:34px 34px 28px}.question-card,.result-body{padding:26px}.result-hero{padding:28px 26px}.detail-grid{grid-template-columns:1fr 1fr}.detail.wide{grid-column:1/-1}}
 @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
 @media print{
-  body{background:#fff!important}.shell{padding:0}.app{width:100%;max-width:none}.screen{display:none!important}#resultScreen.active{display:block!important}.card{box-shadow:none;border:0}.exports,.restart,.source{display:none!important}.result-hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}.result-body{padding:18px}.detail-grid{grid-template-columns:1fr 1fr}.detail{break-inside:avoid}.comp-row{break-inside:avoid}
+  @page{size:A4;margin:12mm}
+  html,body{width:auto!important;height:auto!important;min-height:0!important;background:#fff!important;overflow:visible!important}
+  body{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .shell{display:block!important;min-height:0!important;padding:0!important}
+  .app{width:100%!important;max-width:none!important}
+  .screen{display:none!important}
+  #resultScreen.active{display:block!important;overflow:visible!important}
+  .card,.result-wrap,.result-body{box-shadow:none!important;border:0!important;overflow:visible!important}
+  .exports,.restart,.source,.toast{display:none!important}
+  .result-hero{overflow:visible!important;break-inside:avoid;page-break-inside:avoid;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .result-body{padding:14px 0 0!important}
+  .section-title{break-after:avoid;page-break-after:avoid}
+  .comp{gap:7px!important;margin-bottom:10px}
+  .comp-row{break-inside:avoid;page-break-inside:avoid}
+  .detail-grid{display:block!important;margin-top:12px!important}
+  .detail{display:block!important;margin:0 0 10px!important;break-inside:avoid!important;page-break-inside:avoid!important;overflow:visible!important}
+  .tie-profile-block{break-before:auto;page-break-before:auto;overflow:visible!important}
+  .tie-profile-heading{break-after:avoid;page-break-after:avoid}
+  .answer-review{margin-top:18px!important;padding-top:14px!important;overflow:visible!important}
+  .answer-review-list{display:block!important}
+  .answer-review-item{display:block!important;margin:0 0 8px!important;break-inside:avoid!important;page-break-inside:avoid!important;overflow:visible!important}
+  .answer-review-top{break-after:avoid;page-break-after:avoid}
+  h1,h2,h3,p,li,blockquote,cite,span{orphans:3;widows:3}
 }
 </style>
 </head>
@@ -305,7 +327,7 @@ function renderAnswerReview(){
    box.appendChild(item);
  });
 }
-function savePdf(){ toast('Na tela de impressão, escolha “Salvar como PDF”.'); setTimeout(()=>window.print(),350); }
+function savePdf(){ const t=$('#toast'); t.classList.remove('show'); t.textContent=''; window.print(); }
 let toastTimer;function toast(msg){const t=$('#toast');t.textContent=msg;t.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>t.classList.remove('show'),2600)}
 $('#startBtn').addEventListener('click',initQuiz);$('#nextBtn').addEventListener('click',next);$('#backBtn').addEventListener('click',back);$('#restartBtn').addEventListener('click',()=>{show(startScreen);current=0;answers=Array(questions.length).fill(null)});$('#pdfBtn').addEventListener('click',savePdf);
 })();
