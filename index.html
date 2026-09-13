@@ -73,7 +73,7 @@ h1{font-size:clamp(2rem,9vw,3.25rem);line-height:1.01;color:var(--green-950);mar
     <div class="meta"><span class="pill">10 perguntas</span><span class="pill">≈ 3 minutos</span><span class="pill">Resultado imediato</span></div>
     <div class="sincerity-callout"><strong>Responda com sinceridade.</strong> Não existe resposta certa ou errada aqui. Pense em como você realmente age com suas finanças no dia a dia — quanto mais honestas forem suas respostas, mais preciso e útil será o seu resultado.</div>
     <button id="startBtn" class="primary" type="button">Começar o teste</button>
-    <p class="note">Inspirado na pesquisa <strong>“5 Perfis do Investidor Brasileiro”</strong>, da ANBIMA. Esta adaptação usa nomes baseados em características/virtudes bíblicas e tem finalidade educativa — não substitui análise de suitability nem recomendação de investimento.</p>
+    <p class="note">Inspirado na pesquisa <strong>“5 Perfis do Investidor Brasileiro”</strong>, da ANBIMA. Esta adaptação usa nomes baseados em características/virtudes bíblicas e tem finalidade educativa.</p>
   </div>
 </section>
 
@@ -140,7 +140,7 @@ const profiles = {
     c1:'#C47A00', c2:'#E6A821'
   },
   confiante: {
-    name:'Confiante', origin:'Despreocupado', letter:'C',
+    name:'Impulsivo', origin:'Despreocupado', letter:'I',
     one:'Você valoriza o presente, a liberdade e a capacidade de se virar quando algo acontece.',
     description:'Você tende a criar pouco vínculo com o dinheiro e prefere aproveitar o que ele pode proporcionar agora. Age com espontaneidade, é otimista e percebe oportunidades com rapidez. Planejamento financeiro, controle detalhado e acumulação podem parecer distantes ou pouco motivadores.',
     traits:['Busca gratificação e experiências no presente','É espontâneo e otimista diante de imprevistos','Aproveita oportunidades com agilidade','Tende a acompanhar menos os detalhes do orçamento'],
@@ -182,66 +182,66 @@ const profiles = {
 };
 
 const questions = [
- {topic:'Quando o dinheiro entra', text:'Quando você recebe seu salário ou sua principal renda, o que mais se parece com você?', options:[
-  ['prudente','Já separo valores definidos para metas, reserva e investimentos antes de gastar.'],
-  ['perseverante','Guardo um pouco logo de início, mesmo que seja uma quantia pequena.'],
-  ['adaptavel','Pago primeiro os boletos e necessidades do mês; depois vejo se sobrou algo.'],
-  ['visionario','Penso primeiro no grande projeto que quero realizar; guardo quando isso parece acelerar esse sonho.'],
-  ['confiante','Prefiro aproveitar o presente e vou administrando o restante conforme as coisas acontecem.'] ]},
- {topic:'Risco e decisões', text:'Ao pensar em uma oportunidade de investimento com chance de oscilar, qual reação combina mais com você?', options:[
-  ['perseverante','Prefiro algo mais previsível e seguro, mesmo que o ganho potencial seja menor.'],
-  ['visionario','Se puder acelerar muito um grande objetivo, aceito correr um risco maior.'],
-  ['prudente','Avalio prazo, risco, diversificação e objetivo antes de decidir quanto faz sentido assumir.'],
-  ['confiante','Posso entrar pela oportunidade ou pela sensação de que vai dar certo, sem analisar tantos detalhes.'],
-  ['adaptavel','Depende do meu momento: posso mudar de escolha conforme as contas e prioridades do mês.'] ]},
- {topic:'Crédito e dívidas', text:'Quando aparece uma despesa maior do que o dinheiro disponível no mês, o que você tende a fazer?', options:[
-  ['adaptavel','Reorganizo pagamentos e, se for necessário, uso crédito para fazer as contas essenciais caberem.'],
-  ['perseverante','Evito dívida; prefiro adiar, reduzir a compra ou juntar aos poucos.'],
-  ['confiante','Parcelo se isso resolver agora e depois vejo como encaixar no orçamento.'],
-  ['prudente','Calculo o custo total e só assumo a dívida se ela couber no fluxo planejado.'],
-  ['visionario','Aceito a dívida se ela viabilizar uma oportunidade grande, um projeto ou uma virada de vida.'] ]},
- {topic:'Dinheiro inesperado', text:'Você recebe R$ 2.000 que não estavam previstos. O que mais provavelmente faria?', options:[
-  ['confiante','Usaria boa parte para algo prazeroso ou uma experiência que estou com vontade de viver.'],
-  ['prudente','Distribuiria entre prioridades já definidas: reserva, metas e investimentos.'],
-  ['adaptavel','Quitaria contas, atrasos ou despesas que estão pressionando o mês.'],
-  ['perseverante','Guardaria a maior parte para reforçar minha segurança financeira.'],
-  ['visionario','Pensaria no meu grande projeto; se R$ 2.000 ainda parecer pouco, posso acabar esperando uma quantia maior para agir.'] ]},
- {topic:'Compra importante', text:'Para comprar algo importante e caro, qual estratégia parece mais natural?', options:[
-  ['visionario','A compra faz sentido quando representa um salto importante para um projeto ou futuro que imagino.'],
-  ['adaptavel','Vejo qual parcela cabe agora e ajusto o resto do mês ao redor dela.'],
-  ['perseverante','Pesquiso, junto aos poucos e tento comprar com o máximo de segurança possível.'],
-  ['prudente','Defino prazo, custo total, alternativas e comparo se vale mais juntar, investir ou financiar.'],
-  ['confiante','Se eu gostar muito e surgir uma boa chance, prefiro resolver logo e aproveitar.'] ]},
- {topic:'Reserva de emergência', text:'Qual frase descreve melhor sua relação com reserva para imprevistos?', options:[
-  ['adaptavel','É difícil manter: quando consigo juntar, alguma necessidade do mês costuma consumir o valor.'],
-  ['prudente','Tenho ou quero ter um valor-alvo claro, com contribuições planejadas até alcançá-lo.'],
-  ['confiante','Não é uma prioridade forte; confio que vou encontrar uma saída se algo acontecer.'],
-  ['visionario','Sei que é importante, mas pequenos valores me motivam menos do que investir no meu grande sonho.'],
-  ['perseverante','Vou formando aos poucos, com constância, mesmo sem uma meta perfeita.'] ]},
- {topic:'Sonhos financeiros', text:'Quando você pensa em um grande sonho financeiro, o que acontece em seguida?', options:[
-  ['prudente','Transformo o sonho em meta, valor, prazo e etapas mensuráveis.'],
-  ['visionario','Fico energizado com a possibilidade e busco uma grande oportunidade para torná-la realidade.'],
-  ['confiante','Gosto de viver bem agora; o sonho futuro não costuma comandar minhas escolhas do mês.'],
-  ['perseverante','Começo a separar um pouco sempre, mesmo que leve bastante tempo.'],
-  ['adaptavel','O sonho existe, mas muda de prioridade conforme surgem demandas e urgências.'] ]},
- {topic:'Fim do mês', text:'Faltam alguns dias para o mês terminar e o saldo está apertado. Como você reage?', options:[
-  ['confiante','Improviso, corto uma coisa ou outra e sigo sem me preocupar demais.'],
-  ['adaptavel','Faço malabarismos entre contas, datas, limites e o que é mais urgente.'],
-  ['perseverante','Reduzo bastante os gastos para preservar o que ainda tenho.'],
-  ['visionario','Penso em como gerar uma renda extra ou numa oportunidade que possa mudar o jogo.'],
-  ['prudente','Revejo o orçamento, corrijo a causa do desvio e ajusto o próximo mês.'] ]},
- {topic:'Forma de investir', text:'Qual padrão de investimento mais combina com você hoje?', options:[
-  ['visionario','Invisto de forma mais pontual quando tenho uma quantia relevante ou vejo uma oportunidade grande.'],
-  ['perseverante','Prefiro aportes pequenos e regulares em opções que me transmitam segurança.'],
-  ['adaptavel','Invisto quando sobra; os aportes e escolhas variam bastante conforme o mês.'],
-  ['prudente','Invisto com regularidade, objetivos definidos e acompanhamento de longo prazo.'],
-  ['confiante','Não acompanho muito investimentos; se sobrar ou surgir algo interessante, posso decidir na hora.'] ]},
- {topic:'Dinheiro e pessoas próximas', text:'Uma pessoa da família pede ajuda financeira. Qual resposta se aproxima mais da sua?', options:[
-  ['perseverante','Tento ajudar com o que posso, mesmo que isso adie um pouco algum plano meu.'],
-  ['prudente','Olho meu orçamento e defino um limite que ajude sem comprometer minha segurança e meus objetivos.'],
-  ['confiante','Se eu sentir que a pessoa precisa, posso ajudar espontaneamente e ajustar minhas contas depois.'],
-  ['adaptavel','Reorganizo o mês e procuro uma forma prática de fazer caber, mesmo que eu precise remanejar pagamentos.'],
-  ['visionario','Prefiro ajudar de um jeito que gere uma mudança maior no futuro, como viabilizar um projeto ou oportunidade.'] ]}
+ {topic:'Quando o dinheiro entra', text:'Quando você recebe seu salário ou outra renda do mês, o que costuma fazer primeiro?', options:[
+  ['prudente','Gosto de ter uma ideia do que vai para contas, objetivos e do que posso usar no mês antes de começar a gastar.'],
+  ['perseverante','Guardo um pouco, mesmo que seja uma quantia pequena.'],
+  ['adaptavel','Pago as contas e os gastos do mês e depois vejo se consigo guardar alguma coisa.'],
+  ['visionario','Penso no meu grande sonho e guardo quando sinto que isso vai me ajudar a chegar lá mais rápido.'],
+  ['confiante','Começo a usar o dinheiro conforme as necessidades e vontades aparecem e ajusto o restante ao longo do mês.'] ]},
+ {topic:'Risco e decisões', text:'Se um investimento pode subir e descer de valor, como você costuma pensar?', options:[
+  ['perseverante','Prefiro algo mais seguro e estável, mesmo que possa render menos.'],
+  ['visionario','Se puder me aproximar mais rápido de um grande objetivo, aceito correr mais risco.'],
+  ['prudente','Eu me sinto mais confortável quando entendo como o investimento funciona, quanto posso perder e se ele combina com meu objetivo.'],
+  ['confiante','Se a oportunidade me animar, posso decidir pelo que ela parece oferecer naquele momento, sem analisar tudo em profundidade.'],
+  ['adaptavel','Minha escolha muda de acordo com minha situação e com as contas do mês.'] ]},
+ {topic:'Crédito e dívidas', text:'Quando aparece um gasto que você quer ou precisa fazer, mas ele não cabe no orçamento daquele mês, o que você costuma fazer?', options:[
+  ['adaptavel','Reorganizo as contas e, se precisar, uso cartão, parcelamento ou outro crédito para conseguir pagar.'],
+  ['perseverante','Prefiro esperar, gastar menos ou juntar o dinheiro aos poucos antes de assumir uma dívida.'],
+  ['confiante','Se quero ou preciso resolver logo, posso parcelar e vou ajustando essas parcelas nos meses seguintes.'],
+  ['prudente','Costumo olhar o valor total e o peso das parcelas no orçamento antes de decidir se assumo esse gasto.'],
+  ['visionario','Posso assumir a dívida se ela ajudar a realizar um projeto ou aproveitar uma oportunidade que considero importante.'] ]},
+ {topic:'Dinheiro inesperado', text:'Você recebe R$ 2.000 que não estava esperando. O que provavelmente faria?', options:[
+  ['confiante','Usaria boa parte em algo que quero ou em uma experiência e decidiria depois o que fazer com o restante.'],
+  ['prudente','Provavelmente dividiria o dinheiro entre algumas prioridades, como contas, reserva, metas ou investimentos.'],
+  ['adaptavel','Usaria para pagar contas, atrasos ou gastos que estão apertando o mês.'],
+  ['perseverante','Guardaria a maior parte para me sentir mais seguro financeiramente.'],
+  ['visionario','Pensaria no meu grande projeto e talvez guardasse esse valor esperando juntar mais para fazer algo maior.'] ]},
+ {topic:'Visão das próprias finanças', text:'Quando você quer entender como está sua vida financeira, o que mais combina com você?', options:[
+  ['prudente','Costumo olhar o que entrou, o que saiu e o que ainda tenho para pagar antes de tomar decisões.'],
+  ['perseverante','Não acompanho tudo em detalhes, mas observo se estou conseguindo gastar menos e guardar um pouco ao longo do tempo.'],
+  ['adaptavel','Geralmente percebo como estou pelo saldo, pelas contas que ainda faltam e pelo que preciso ajustar naquele mês.'],
+  ['visionario','Presto mais atenção em quanto falta para meus projetos e objetivos do que em acompanhar cada gasto do dia a dia.'],
+  ['confiante','Normalmente não paro para conferir tudo; vou percebendo minha situação conforme uso o dinheiro e as necessidades aparecem.'] ]},
+ {topic:'Reserva de emergência', text:'Qual frase mais combina com a sua relação com dinheiro para imprevistos?', options:[
+  ['adaptavel','É difícil manter uma reserva, porque quando consigo juntar sempre aparece alguma necessidade.'],
+  ['prudente','Costumo pensar em um valor de reserva e em quanto consigo separar para ela ao longo dos meses.'],
+  ['confiante','Reserva não costuma ser minha primeira preocupação; se surgir um imprevisto, normalmente penso em como resolver naquele momento.'],
+  ['visionario','Sei que é importante, mas me animo mais em guardar para um grande sonho do que para emergências.'],
+  ['perseverante','Vou guardando aos poucos, todo mês que consigo, mesmo sem ter um valor final definido.'] ]},
+ {topic:'Sonhos financeiros', text:'Quando você pensa em um grande sonho que precisa de dinheiro, o que costuma fazer?', options:[
+  ['prudente','Costumo transformar o sonho em um valor, um prazo e uma quantia que posso guardar ao longo do caminho.'],
+  ['visionario','Fico muito animado e procuro uma oportunidade que possa fazer esse sonho acontecer mais rápido.'],
+  ['confiante','O sonho é importante, mas no dia a dia minhas decisões costumam ser mais influenciadas pelo que quero viver agora.'],
+  ['perseverante','Começo a guardar um pouco por vez, mesmo sabendo que pode demorar.'],
+  ['adaptavel','Quero realizar o sonho, mas ele acaba mudando de prioridade quando aparecem outras necessidades.'] ]},
+ {topic:'Fim do mês', text:'Você percebe que o dinheiro deste mês vai ficar apertado antes de chegar ao fim. O que você costuma fazer?', options:[
+  ['confiante','Continuo levando o mês normalmente e vou ajustando se perceber que realmente vai faltar.'],
+  ['adaptavel','Reorganizo o que posso adiar, mudar de data ou reduzir para conseguir fechar o mês.'],
+  ['perseverante','Seguro os gastos e uso apenas o necessário até o próximo dinheiro entrar.'],
+  ['visionario','Procuro alguma forma de fazer uma renda extra para aliviar o mês.'],
+  ['prudente','Costumo conferir o que ainda tenho e o que falta pagar para decidir como seguir até o fim do mês.'] ]},
+ {topic:'Dinheiro rápido e risco', text:'Quando surge uma chance de conseguir dinheiro mais rápido, como antecipar um valor que você receberia depois, participar de uma aposta ou loteria, ou entrar em uma oportunidade de ganho alto, o que mais pesa na sua decisão?', options:[
+  ['perseverante','Prefiro caminhos em que eu saiba de onde o dinheiro virá, mesmo que demorem mais.'],
+  ['prudente','Costumo comparar o que posso ganhar com o que posso perder ou pagar antes de decidir.'],
+  ['adaptavel','Se isso resolver uma necessidade urgente, posso antecipar um dinheiro futuro, mesmo sabendo que vou receber menos depois.'],
+  ['visionario','Se eu enxergar uma possibilidade real de ganho maior, posso aceitar um risco acima do que costumo assumir.'],
+  ['confiante','Se a chance me empolgar ou parecer simples, posso decidir rápido e entender melhor os detalhes depois.'] ]},
+ {topic:'Dinheiro e pessoas próximas', text:'Uma pessoa da família pede ajuda com dinheiro. O que você provavelmente faria?', options:[
+  ['perseverante','Ajudo com o que consigo, mesmo que eu precise adiar um pouco algum plano meu.'],
+  ['prudente','Antes de ajudar, costumo pensar em quanto consigo oferecer sem desorganizar o que já preciso pagar.'],
+  ['confiante','Se a situação me sensibilizar, posso ajudar na hora e depois vejo como reorganizar o mês.'],
+  ['adaptavel','Reorganizo o mês para tentar fazer a ajuda caber, mesmo que eu precise mudar alguns pagamentos.'],
+  ['visionario','Prefiro ajudar de uma forma que possa melhorar a situação da pessoa por mais tempo, como apoiar um projeto ou oportunidade.'] ]}
 ];
 
 const $ = s => document.querySelector(s);
@@ -265,7 +265,7 @@ function getScores(){const scores=Object.fromEntries(PROFILE_ORDER.map(k=>[k,0])
 function getWinner(scores){ const max=Math.max(...Object.values(scores)); const tied=PROFILE_ORDER.filter(k=>scores[k]===max); return {winner:tied.length===1?tied[0]:null,tied}; }
 const tieTraits={
  perseverante:'a constância de quem constrói segurança passo a passo',
- confiante:'a leveza e a espontaneidade de quem valoriza o presente',
+ confiante:'a espontaneidade de quem tende a agir antes de analisar todos os impactos',
  adaptavel:'a flexibilidade de quem se ajusta às demandas do mês',
  visionario:'a visão de futuro de quem é movido por grandes possibilidades',
  prudente:'a organização de quem transforma objetivos em planos concretos'
